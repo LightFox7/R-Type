@@ -1,0 +1,21 @@
+[requires]
+zlib/1.2.11@conan/stable
+bzip2/1.0.8@conan/stable
+boost/1.71.0@conan/stable
+sfml/2.5.1@bincrafters/stable
+
+
+[options]
+boost:shared=True
+sfml:graphics=True
+sfml:window=True
+sfml:audio=True
+sfml:shared=True
+sfml:network=True
+
+[generators]
+cmake
+
+[imports]
+bin, *.dll -> ./bin # Copies all dll files from packages bin folder to my "bin" folder
+lib, *.dylib* -> ./bin # Copies all dylib files from packages lib folder to my "bin" folder
